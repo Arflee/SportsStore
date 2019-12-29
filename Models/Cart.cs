@@ -9,7 +9,6 @@ namespace SportsStore.Models
 
         public virtual IEnumerable<CartLine> Lines => lineCollection;
 
-
         public virtual void AddItem(Product product, int quantity)
         {
             CartLine line = lineCollection
