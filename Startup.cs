@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SportsStore.Models;
+using SportsStore.Models.Repositories;
 
 namespace SportsStore
 {
@@ -22,6 +24,10 @@ namespace SportsStore
             });
 
             services.AddTransient<IProductRepository, EFProductRepository>();
+
+            services.AddScoped<Cart>(sp => SessionCart.GetCart(sp));
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddTransient<IOrderRepository, EFOrderRepository>();
 
             services.AddRazorPages();
             services.AddMemoryCache();

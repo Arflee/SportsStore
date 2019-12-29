@@ -7,9 +7,14 @@ namespace SportsStore.Models
     {
         private readonly List<CartLine> lineCollection = new List<CartLine>();
 
+        public virtual IEnumerable<CartLine> Lines => lineCollection;
+
+
         public virtual void AddItem(Product product, int quantity)
         {
-            CartLine line = lineCollection.Where(p => p.Product.ProductID == product.ProductID).FirstOrDefault();
+            CartLine line = lineCollection
+                .Where(p => p.Product.ProductID == product.ProductID)
+                .FirstOrDefault();
 
             if (line == null)
             {
@@ -32,8 +37,6 @@ namespace SportsStore.Models
         }
 
         public virtual void Clear() => lineCollection.Clear();
-
-        public virtual IEnumerable<CartLine> Lines => lineCollection;
     }
 
     public class CartLine
