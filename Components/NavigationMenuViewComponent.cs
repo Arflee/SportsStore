@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 using SportsStore.Models;
+using System.Linq;
 
 namespace SportsStore.Components
 {

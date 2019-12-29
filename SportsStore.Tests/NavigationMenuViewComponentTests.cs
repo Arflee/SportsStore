@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.AspNetCore.Routing;
 using Moq;
 using SportsStore.Components;
 using SportsStore.Models;
+using System.Collections.Generic;
+using System.Linq;
 using Xunit;
 
 namespace SportsStore.Tests

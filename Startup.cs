@@ -1,15 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SportsStore.Models;
-using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
 
 namespace SportsStore
 {
@@ -25,9 +20,12 @@ namespace SportsStore
             {
                 options.UseSqlServer(Configuration["Data:SportStoreProducts:ConnectionString"]);
             });
+
             services.AddTransient<IProductRepository, EFProductRepository>();
-            //services.AddTransient<IProductRepository, FakeProductRepository>();
+
             services.AddRazorPages();
+            services.AddMemoryCache();
+            services.AddSession();
         }
 
         public static void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,6 +37,7 @@ namespace SportsStore
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseEndpoints(options =>
             {

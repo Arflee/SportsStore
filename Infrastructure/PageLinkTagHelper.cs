@@ -12,6 +12,7 @@ namespace SportsStore.Infrastructure
     public class PageLinkTagHelper : TagHelper
     {
         private readonly IUrlHelperFactory urlHelperFactory;
+
         public PageLinkTagHelper(IUrlHelperFactory helperFactory)
         {
             urlHelperFactory = helperFactory;
@@ -20,6 +21,7 @@ namespace SportsStore.Infrastructure
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext ViewContext { get; set; }
+
         public PagingInfo PageModel { get; set; }
 
         [HtmlAttributeName(DictionaryAttributePrefix = "page-url-")]

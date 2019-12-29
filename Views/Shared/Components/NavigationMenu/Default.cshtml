@@ -5,7 +5,7 @@
     Home
 </a>
 
-@foreach(string category in Model)
+@foreach (string category in Model)
 {
     <a class="btn btn-block @(category == ViewBag.SelectedCategory ? "btn-primary" : "btn-secondary")"
        asp-action="List" asp-controller="Product"

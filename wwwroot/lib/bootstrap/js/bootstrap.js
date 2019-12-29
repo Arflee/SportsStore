@@ -15,9 +15,7 @@ if (typeof jQuery === 'undefined') {
   }
 }(jQuery);
 
-
 +function () {
-
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -36,7 +34,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
  */
 
 var Util = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Private TransitionEnd Helpers
@@ -129,7 +126,6 @@ var Util = function ($) {
    */
 
   var Util = {
-
     TRANSITION_END: 'bsTransitionEnd',
 
     getUID: function getUID(prefix) {
@@ -186,7 +182,6 @@ var Util = function ($) {
  */
 
 var Alert = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -365,7 +360,6 @@ var Alert = function ($) {
  */
 
 var Button = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -528,7 +522,6 @@ var Button = function ($) {
  */
 
 var Carousel = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -861,7 +854,6 @@ var Carousel = function ($) {
       });
 
       if (Util.supportsTransitionEnd() && $(this._element).hasClass(ClassName.SLIDE)) {
-
         $(nextElement).addClass(orderClassName);
 
         Util.reflow(nextElement);
@@ -1008,7 +1000,6 @@ var Carousel = function ($) {
  */
 
 var Collapse = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -1360,7 +1351,6 @@ var Collapse = function ($) {
  */
 
 var Dropdown = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -1439,7 +1429,6 @@ var Dropdown = function ($) {
       }
 
       if ('ontouchstart' in document.documentElement && !$(parent).closest(Selector.NAVBAR_NAV).length) {
-
         // if mobile we use a backdrop because click events don't delegate
         var dropdown = document.createElement('div');
         dropdown.className = ClassName.BACKDROP;
@@ -1564,7 +1553,6 @@ var Dropdown = function ($) {
       var isActive = $(parent).hasClass(ClassName.SHOW);
 
       if (!isActive && event.which !== ESCAPE_KEYCODE || isActive && event.which === ESCAPE_KEYCODE) {
-
         if (event.which === ESCAPE_KEYCODE) {
           var toggle = $(parent).find(Selector.DATA_TOGGLE)[0];
           $(toggle).trigger('focus');
@@ -1643,7 +1631,6 @@ var Dropdown = function ($) {
  */
 
 var Modal = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -2172,7 +2159,6 @@ var Modal = function ($) {
  */
 
 var ScrollSpy = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -2484,7 +2470,6 @@ var ScrollSpy = function ($) {
  */
 
 var Tab = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -2658,7 +2643,6 @@ var Tab = function ($) {
       }
 
       if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
-
         var dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
         if (dropdownElement) {
           $(dropdownElement).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
@@ -2740,7 +2724,6 @@ var Tab = function ($) {
  */
 
 var Tooltip = function ($) {
-
   /**
    * Check for Tether dependency
    * Tether - http://tether.io/
@@ -2898,7 +2881,6 @@ var Tooltip = function ($) {
           context._leave(null, context);
         }
       } else {
-
         if ($(this.getTipElement()).hasClass(ClassName.SHOW)) {
           this._leave(null, this);
           return;
@@ -3357,7 +3339,6 @@ var Tooltip = function ($) {
  */
 
 var Popover = function ($) {
-
   /**
    * ------------------------------------------------------------------------
    * Constants
@@ -3475,7 +3456,6 @@ var Popover = function ($) {
     _createClass(Popover, null, [{
       key: 'VERSION',
 
-
       // getters
 
       get: function get() {
@@ -3531,5 +3511,4 @@ var Popover = function ($) {
 
   return Popover;
 }(jQuery);
-
 }();
