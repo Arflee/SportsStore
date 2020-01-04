@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" asp-href-include="lib/bootstrap/css/*.css" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .input-validation-error {
+            border-color: red;
+            background-color: #fee;
+        }
+    </style>
+    <script src="~/lib/jquery/jquery.min.js"></script>
+    <script src="~/lib/jquery-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.min.js"></script>
+</head>
+
+<partial name="HomeHeader" model="false"/>
+
+<body class="m-1 p-1">
+    <div class="bg-info p-2"><h4>@ViewBag.Title</h4></div>
+    @if (TempData["edited"] != null)
+    {
+        <div class="alert alert-success">@TempData["edited"]</div>
+    }
+    @if (TempData["deleted"] != null)
+    {
+        <div class="alert alert-danger">@TempData["deleted"]</div>
+    }
+    @RenderBody()
+</body>
+</html>
